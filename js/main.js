@@ -97,7 +97,7 @@ if (formRegistro) {
   });
 }
 
-// ----------- Funciones Aux ----------- 
+
 function validaCorreo(correo) {
   return correo.endsWith("@duoc.cl") || correo.endsWith("@profesor.duoc.cl") || correo.endsWith("@gmail.com");
 }
