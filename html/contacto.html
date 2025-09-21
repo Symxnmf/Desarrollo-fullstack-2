@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Contacto</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/contacto.css">
 </head>
 <body>
   <header>
@@ -16,20 +16,23 @@
       <a href="registro.html">Registro</a>
     </nav>
   </header>
+
   <main>
     <form id="form-contacto">
-      <label>Nombre:</label>
+      <label for="c-nombre">Nombre:</label>
       <input type="text" id="c-nombre" required maxlength="100">
 
-      <label>Correo:</label>
+      <label for="c-correo">Correo:</label>
       <input type="email" id="c-correo" required maxlength="100">
 
-      <label>Comentario:</label>
+      <label for="c-comentario">Comentario:</label>
       <textarea id="c-comentario" required maxlength="500"></textarea>
 
       <button type="submit">Enviar</button>
+      <p id="mensaje-estado"></p>
     </form>
   </main>
-  <script src="script.js"></script>
+
+  <script src="../js/contacto.js"></script>
 </body>
 </html>
