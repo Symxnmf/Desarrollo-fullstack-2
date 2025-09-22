@@ -31,61 +31,48 @@ const productos = [
   }
 ];
 
-let carrito = [];
-
+// Cargar productos
 const listaProductos = document.getElementById("lista-productos");
 listaProductos.classList.add("productos");
+
+// Crear contenedor para mensaje
+const mensaje = document.createElement("p");
+mensaje.style.textAlign = "center";
+mensaje.style.fontWeight = "bold";
+mensaje.style.color = "#27ae60";
+listaProductos.parentNode.insertBefore(mensaje, listaProductos.nextSibling);
 
 productos.forEach((prod, index) => {
   const div = document.createElement("div");
   div.classList.add("producto");
+
   div.innerHTML = `
     <img src="${prod.imagen}" alt="${prod.nombre}">
     <h3>${prod.nombre}</h3>
     <p>${prod.descripcion}</p>
     <p><strong>$${prod.precio}</strong></p>
-    <button onclick="agregarAlCarrito(${index})">Agregar al carrito</button>
+    <button>Agregar al carrito</button>
   `;
-  listaProductos.appendChild(div);
-});
 
-function agregarAlCarrito(index) {
-  carrito.push(productos[index]);
-  renderCarrito();
-}
+  const btn = div.querySelector("button");
+  btn.addEventListener("click", () => {
+    // Tomar carrito de localStorage
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function eliminarDelCarrito(index) {
-  carrito.splice(index, 1);
-  renderCarrito();
-}
+    // Buscar si el producto ya existe
+    const existente = carrito.find(item => item.nombre === prod.nombre);
+    if (existente) {
+      existente.cantidad += 1;
+    } else {
+      carrito.push({ nombre: prod.nombre, precio: prod.precio, cantidad: 1 });
+    }
 
-function renderCarrito() {
-  const listaCarrito = document.getElementById("carrito");
-  const total = document.getElementById("total");
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 
-  listaCarrito.innerHTML = "";
-  let suma = 0;
-
-  carrito.forEach((prod, index) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      ${prod.nombre} - $${prod.precio}
-      <button onclick="eliminarDelCarrito(${index})">❌</button>
-    `;
-    listaCarrito.appendChild(li);
-    suma += prod.precio;
+    // Mensaje temporal
+    mensaje.textContent = `✅ ${prod.nombre} agregado al carrito`;
+    setTimeout(() => { mensaje.textContent = ""; }, 2000);
   });
 
-  
-  total.innerHTML = `
-    Total: $${suma} 
-    ${suma > 0 ? '<button onclick="confirmarPago()">Confirmar Pago</button>' : ""}
-  `;
-}
-
-
-function confirmarPago() {
-  alert("✅ Pago realizado con éxito. ¡Gracias por tu compra!");
-  carrito = []; 
-  renderCarrito(); 
-}
+  listaProductos.appendChild(div);
+});
