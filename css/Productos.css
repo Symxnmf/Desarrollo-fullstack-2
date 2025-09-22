@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -46,12 +45,11 @@ nav a:hover {
   background-color: #fa8e92;
 }
 
-
 main h2 {
   color: #d94f4f;
   margin-bottom: 20px;
+  text-align: center;
 }
-
 
 .productos {
   display: grid;
@@ -91,7 +89,6 @@ main h2 {
   margin-bottom: 15px;
 }
 
-
 .producto button {
   background-color: #f67280;
   color: #fff;
@@ -105,21 +102,4 @@ main h2 {
 
 .producto button:hover {
   background-color: #c94f60;
-}
-
-
-#carrito {
-  list-style: none;
-  padding-left: 20px;
-  margin-bottom: 10px;
-}
-
-#carrito li {
-  margin-bottom: 5px;
-}
-
-#total {
-  font-weight: bold;
-  color: #333;
-  margin-top: 10px;
 }
