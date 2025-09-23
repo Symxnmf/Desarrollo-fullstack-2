@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrador - Pastelería</title>
+  <link rel="stylesheet" href="../css/Administrador.css">
+</head>
+<body>
+  <header>
+    <h1>Panel de Administrador - Pastelería</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="IniciarSesion.html">Cerrar Sesión</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="agregar-producto">
+      <h2>Agregar Nuevo Pastel</h2>
+      <form id="form-agregar">
+        <input type="text" id="nombre" placeholder="Nombre del pastel" required>
+        <input type="number" id="precio" placeholder="Precio" min="0" required>
+        <button type="submit">Agregar Pastel</button>
+      </form>
+    </section>
+
+    <section id="lista-productos">
+      <h2>Lista de Pasteles</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="productos-body">
+         
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../js/Administrador.js"></script>
+</body>
+</html>

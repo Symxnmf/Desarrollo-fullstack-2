@@ -13,7 +13,6 @@ body {
   padding: 20px;
 }
 
-
 header {
   background-color: #ffb6b9;
   padding: 20px;
@@ -47,7 +46,6 @@ nav a:hover {
   background-color: #fa8e92;
 }
 
-
 main {
   display: flex;
   justify-content: center;
@@ -55,7 +53,7 @@ main {
   padding: 20px;
 }
 
-form {
+form#form-login {
   background-color: #fff;
   padding: 25px;
   border-radius: 10px;
@@ -64,15 +62,14 @@ form {
   max-width: 450px;
 }
 
-form label {
+form#form-login label {
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
   color: #d94f4f;
 }
 
-form input,
-form textarea {
+form#form-login input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -82,12 +79,7 @@ form textarea {
   font-family: inherit;
 }
 
-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-form button {
+form#form-login button {
   background-color: #f67280;
   color: #fff;
   border: none;
@@ -100,10 +92,9 @@ form button {
   transition: background-color 0.3s;
 }
 
-form button:hover {
+form#form-login button:hover {
   background-color: #c94f60;
 }
-
 
 #mensaje-estado {
   margin-top: 15px;
@@ -114,8 +105,10 @@ form button:hover {
 
 #mensaje-estado.ok {
   color: #27ae60;
+  display: block;
 }
 
 #mensaje-estado.error {
   color: #d94f4f;
+  display: block;
 }
