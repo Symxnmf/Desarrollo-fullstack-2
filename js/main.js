@@ -1,4 +1,4 @@
-// ----------- Productos y Carrito ----------- 
+
 let productos = [
   { id: 1, nombre: "Torta de Chocolate", precio: 10000 },
   { id: 2, nombre: "Pie de Limón", precio: 8000 },
@@ -43,7 +43,7 @@ function mostrarCarrito() {
 mostrarProductos();
 mostrarCarrito();
 
-// ----------- Contacto ----------- 
+
 const formContacto = document.getElementById("form-contacto");
 if (formContacto) {
   formContacto.addEventListener("submit", e => {
@@ -58,7 +58,7 @@ if (formContacto) {
   });
 }
 
-// ----------- Login ----------- 
+
 const formLogin = document.getElementById("form-login");
 if (formLogin) {
   formLogin.addEventListener("submit", e => {
@@ -77,7 +77,7 @@ if (formLogin) {
   });
 }
 
-// ----------- Registro ----------- 
+
 const formRegistro = document.getElementById("form-registro");
 if (formRegistro) {
   formRegistro.addEventListener("submit", e => {

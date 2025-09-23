@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="../css/IniciarSesion.css">
+</head>
+<body>
+  <header>
+    <h1>Iniciar Sesión</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="login.html">Login</a>
+      <a href="IniciarSesion.html">Iniciar Sesion</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="form-login">
+      <label for="l-correo">Correo:</label>
+      <input type="email" id="l-correo" required maxlength="100">
+
+      <label for="l-password">Contraseña:</label>
+      <input type="password" id="l-password" required maxlength="50">
+
+      <button type="submit">Iniciar Sesión</button>
+      <p id="mensaje-estado"></p>
+    </form>
+  </main>
+
+  <script src="../js/IniciarSesion.js"></script>
+</body>
+</html>

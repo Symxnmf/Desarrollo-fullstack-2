@@ -31,11 +31,11 @@ const productos = [
   }
 ];
 
-// Cargar productos
+
 const listaProductos = document.getElementById("lista-productos");
 listaProductos.classList.add("productos");
 
-// Crear contenedor para mensaje
+
 const mensaje = document.createElement("p");
 mensaje.style.textAlign = "center";
 mensaje.style.fontWeight = "bold";
@@ -56,10 +56,10 @@ productos.forEach((prod, index) => {
 
   const btn = div.querySelector("button");
   btn.addEventListener("click", () => {
-    // Tomar carrito de localStorage
+    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    // Buscar si el producto ya existe
+   
     const existente = carrito.find(item => item.nombre === prod.nombre);
     if (existente) {
       existente.cantidad += 1;
@@ -69,7 +69,7 @@ productos.forEach((prod, index) => {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    // Mensaje temporal
+    
     mensaje.textContent = `✅ ${prod.nombre} agregado al carrito`;
     setTimeout(() => { mensaje.textContent = ""; }, 2000);
   });
