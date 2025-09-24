@@ -1,12 +1,14 @@
-
+// Lista de productos disponibles
 let productos = [
   { id: 1, nombre: "Torta de Chocolate", precio: 10000 },
   { id: 2, nombre: "Pie de Limón", precio: 8000 },
   { id: 3, nombre: "Cheesecake", precio: 12000 }
 ];
 
+// Carrito almacenado en localStorage o vacío
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+// Muestra los productos con botón para agregar al carrito
 function mostrarProductos() {
   const cont = document.getElementById("lista-productos");
   if (!cont) return;
@@ -18,6 +20,7 @@ function mostrarProductos() {
   });
 }
 
+// Agrega un producto al carrito y actualiza localStorage y la lista
 function agregarCarrito(id) {
   let prod = productos.find(p => p.id === id);
   carrito.push(prod);
@@ -25,6 +28,7 @@ function agregarCarrito(id) {
   mostrarCarrito();
 }
 
+// Muestra los productos del carrito y el total
 function mostrarCarrito() {
   const lista = document.getElementById("carrito");
   const totalTxt = document.getElementById("total");
@@ -40,10 +44,11 @@ function mostrarCarrito() {
   totalTxt.textContent = "Total: $" + total;
 }
 
+// Inicializa la página mostrando productos y carrito
 mostrarProductos();
 mostrarCarrito();
 
-
+// Validación y envío del formulario de contacto
 const formContacto = document.getElementById("form-contacto");
 if (formContacto) {
   formContacto.addEventListener("submit", e => {
@@ -58,7 +63,7 @@ if (formContacto) {
   });
 }
 
-
+// Validación de formulario de login
 const formLogin = document.getElementById("form-login");
 if (formLogin) {
   formLogin.addEventListener("submit", e => {
@@ -77,7 +82,7 @@ if (formLogin) {
   });
 }
 
-
+// Validación de formulario de registro
 const formRegistro = document.getElementById("form-registro");
 if (formRegistro) {
   formRegistro.addEventListener("submit", e => {
@@ -97,7 +102,7 @@ if (formRegistro) {
   });
 }
 
-
+// Función que valida que el correo sea de dominios permitidos
 function validaCorreo(correo) {
   return correo.endsWith("@duoc.cl") || correo.endsWith("@profesor.duoc.cl") || correo.endsWith("@gmail.com");
 }
