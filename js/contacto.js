@@ -19,7 +19,7 @@ document.getElementById("form-contacto").addEventListener("submit", function(eve
     mensajeEstado.style.display = "block"; // Se asegura que sea visible.
     this.reset(); // Se limpia el formulario después de enviarlo.
   } else {
-    // Si falta algún campo, se muestra un mensaje de advertencia.
+    // Si falta algún campo, se muestra un mensaje de advertencia
     mensajeEstado.textContent = "⚠️ Por favor, completa todos los campos.";
     mensajeEstado.className = "error"; 
     mensajeEstado.style.display = "block"; 
